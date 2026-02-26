@@ -1,0 +1,154 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 22px;
+  color: #66fcf1;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #66fcf1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.btn {
+  padding: 8px 15px;
+  background: #66fcf1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.explore-btn {
+  padding: 12px 30px;
+  background: #45a29e;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+}
+
+/* FLOATING EARTH */
+.earth-container {
+  perspective: 1000px;
+}
+
+.earth {
+  width: 300px;
+  height: 300px;
+  background: url("../assets/earth.jpg") no-repeat center/cover;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite, float 4s ease-in-out infinite;
+  box-shadow: 0 0 50px #00f7ff;
+}
+
+/* ROTATION */
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* FLOATING */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* STARS - DISABLED */
+.stars, .stars2, .stars3 {
+  display: none;
+}
+
+/*.stars, .stars2, .stars3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  z-index: -1;
+  animation: moveStars 100s linear infinite;
+}
+
+.stars2 { animation-duration: 150s; opacity: 0.5; }
+.stars3 { animation-duration: 200s; opacity: 0.3; }
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}*/
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}
+
+/* LIGHT MODE */
+body.light-mode {
+  background: #f4f4f4;
+  color: black;
+}
+
+body.light-mode .navbar {
+  background: rgba(255,255,255,0.6);
+}
