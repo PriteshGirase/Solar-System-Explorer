@@ -1,3 +1,22 @@
+# GitHub Pages deployment
+
+To publish this site on GitHub Pages:
+
+- Create a new repository on GitHub (via the website or `gh repo create`).
+- From your project folder run:
+
+```cmd
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo>.git
+git push -u origin main
+```
+
+- The repository includes a GitHub Actions workflow at [.github/workflows/deploy.yml](.github/workflows/deploy.yml) that will deploy the site's contents to the `gh-pages` branch whenever you push to `main`.
+
+After the first push, check the Actions tab on GitHub to confirm the deploy job completed. Your site will be published at `https://<your-username>.github.io/<your-repo>/` once the `gh-pages` branch is published by the workflow. If needed, enable Pages in the repository Settings and select the `gh-pages` branch as the source.
 # 🌌 Solar System Explorer
 
 An interactive and educational web application that allows users to explore the Solar System with immersive animations, scientific explanations, and a modern responsive design.
